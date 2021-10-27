@@ -45,8 +45,8 @@ cd ~/Firefox-Installer_Firefox-Updater && ./firefox-installer.sh
 <tr>
 <td>Installation worked!</td>
 <td style="text-align: center;"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png"><img class="emoji" alt="heavy_check_mark" src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" width="20" height="20"></g-emoji></td>
-<td> ❎ Not Tested </td>
-<td> ❎ Not Tested currently on devlopment</td>
+<td> ❎ Not Tested (Implemented)</td>
+<td> ❎ Not Tested (Implemented)</td>
 </tbody>
 </table>
 
