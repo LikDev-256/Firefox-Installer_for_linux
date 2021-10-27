@@ -7,6 +7,7 @@ currentfile=$(cat firelink.txt)
 logo=Logos/logoinstall.txt
 banner=$(cat $current$logo)
 dist=$(cat /etc/*-release | grep "ID=" | cut -d "=" -f2 | head -n 1)
+basedist=$(cat /etc/*-release | grep "ID_LIKE=" | cut -d "=" -f2 | head -n 1)
 ub=Ubuntu
 filename=$(find fire*.tar.bz2)
 opt=$(find /opt -path /opt/firefox &> path.log)
@@ -50,6 +51,16 @@ if [ "$dist" = "$ub" ]; then
 	fi
 fi
 
+if [ "$dist" = "$ub" ]; then
+	echo -e " $red[$green Arch based distro detected !$red]$white You already have the latest versions from your repos$nc"
+	echo ""
+	echo "The current technique does not support your distro but we have a workaround"
+	echo "Press [y] to proceed and [n] to terminate the script"
+
+	read t
+
+	if [ "$t" = "n" ]; then
+
 sleep 1
 clear
 echo "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
@@ -92,6 +103,11 @@ else
 	fi
 
 	sudo apt remove firefox-esr -y &>/dev/null
+
+	if [ "basedist" = "arch" ]; then
+		echo "For arch distros the outputs are not hidden for debugging purposes"
+		sudo pacman -Rs --noconfirm firefox
+	fi
 fi
 
 sleep 1
@@ -114,7 +130,36 @@ echo -e "$Cyan┖─────────────────────
 	else
 		sudo apt remove firefox -y &>/dev/null
 	fi
-# fi
+
+# Arch implementation
+
+	if [ "basedist" = "arch" ]; then
+		sudo pacman -Syyu
+		sudo pacman -S fakeroot
+		sudo pacman -S yay
+		sudo yay -Syu
+
+		echo "Press [1] to install the beta and [2] to install the stable version"
+
+		read g
+
+		if [ "$g" = "1" ]; then
+			sudo yay -S --noconfirm firefox-beta
+		else
+			sudo yay -S --noconfirm firefox
+		fi
+		sleep 1
+		clear
+		echo "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+		echo "$banner"
+		echo "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+
+		echo -e "$Cyan╔─────────────────────────────────────────────────────────────────────╗$nc"
+		echo -e "$Cyan│$nc $red[$green+$red]$green Installation Successful $red[$green+$red]$Cyan │$nc"
+		echo -e "$Cyan┖─────────────────────────────────────────────────────────────────────┙$nc\n"
+
+		exit 1
+	fi
 
 touch firelink.txt
 echo "$link" > firelink.txt
