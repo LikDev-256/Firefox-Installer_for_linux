@@ -3,6 +3,8 @@ A Script that Installs and keeps your browser upto-date in Debian & Debian based
 
 ---
 
+# Having Lot of issues with the latest testings not intended to use the script until a fix has been done. Use it at your own risk ⚠️
+# If you're a dev please mind helping me
 ## Firefox Installer
 ![Firefox installer script](https://github.com/LikDev-256/Firefox-Installer_Firefox-Updater/blob/main/Logos/44.png)
 
