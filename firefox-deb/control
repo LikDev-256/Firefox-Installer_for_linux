@@ -1,0 +1,7 @@
+Package: Firefox
+Version: 95.0b6
+Depends: ffmpeg (>= 4.1.4), hunspell (>= 1.7.0), pulseaudio (>= 10.0)
+Conflicts : firefox, firefox-esr, firefox-beta
+Architecture: amd64
+Maintainer: LikDev-256, Mozilla <Likdev-256@github.com>
+Description: Highly Customizable and Privacy based browser by Mozilla
