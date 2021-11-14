@@ -3,8 +3,6 @@ A Script that Installs and keeps your browser upto-date in Debian & Debian based
 
 ---
 
-# Having Lot of issues with the latest testings not intended to use the script until a fix has been done. Use it at your own risk ⚠️
-# If you're a dev please mind helping me
 ## Firefox Installer
 ![Firefox installer script](https://github.com/LikDev-256/Firefox-Installer_Firefox-Updater/blob/main/Logos/44.png)
 
@@ -22,13 +20,9 @@ A Script that Installs and keeps your browser upto-date in Debian & Debian based
 sudo apt-get update
 sudo apt-get install git
 ```
-2. Open your terminal and copy this command, For installing the required packages (setup.sh),
+2. Running the script for installing,
 ```
-cd ~/ && git clone https://github.com/LikDev-256/Firefox-Installer_Firefox-Updater.git && cd ~/Firefox-Installer_Firefox-Updater && chmod +x setup.sh && ./setup.sh
-```
-3. Running the script for installing,
-```
-cd ~/Firefox-Installer_Firefox-Updater && ./firefox-installer.sh
+cd ~/ && git clone https://github.com/LikDev-256/Firefox-Installer_Firefox-Updater.git && cd ~/Firefox-Installer_Firefox-Updater && chmod +x firefox-installer.sh && ./firefox-installer.sh
 ```
 ---
 
@@ -46,7 +40,7 @@ cd ~/Firefox-Installer_Firefox-Updater && ./firefox-installer.sh
 <tbody>
 <tr>
 <td>Installation worked!</td>
-<td style="text-align: center;"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png"><img class="emoji" alt="heavy_check_mark" src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" width="20" height="20"></g-emoji></td>
+<td> ❎ Not Tested (Implemented)</td>
 <td> ❎ Not Tested (Implemented)</td>
 <td> ❎ Not Tested (Implemented)</td>
 </tbody>
