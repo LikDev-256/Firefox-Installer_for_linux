@@ -34,7 +34,7 @@ cd ~/ && git clone https://github.com/LikDev-256/Firefox-Installer_Firefox-Updat
 <th></th>
 <th>Ubuntu</th>
 <th>Debian</th>
-<th>Manjaro and arch based</th>
+<th>Garuda and arch based</th>
 </tr>
 </thead>
 <tbody>
@@ -42,7 +42,7 @@ cd ~/ && git clone https://github.com/LikDev-256/Firefox-Installer_Firefox-Updat
 <td>Installation worked!</td>
 <td> ❎ Not Tested (Implemented)</td>
 <td> ❎ Not Tested (Implemented)</td>
-<td> ❎ Not Tested (Implemented)</td>
+<td> ✔️ Tested Worked </td>
 </tbody>
 </table>
 
