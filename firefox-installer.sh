@@ -320,6 +320,8 @@ if [ $deb = True ]; then
 			echo -e "If you Encouter a issue Please Report the issue to,"
 			echo -e "https://github.com/LikDev-256/Firefox-Installer_Firefox-Updater/issues 😬"
 			echo -e "$Cyan┖─────────────────────────────────────────────────────────────────────────┙$nc\n"
+			
+			xdotool key function+F11
 
 			exit 1
 
@@ -337,7 +339,7 @@ elif [ $arch = True ]; then
 		sleep 5
         sed -i "s/pkgver=.*/pkgver=$pkgver/" $archbuildir$archbuild
 		bannershow
-		makepkg -Acs
+		makepkg -Acis
 		sleep 2
 
 			bannershow
@@ -352,6 +354,8 @@ elif [ $arch = True ]; then
 			echo -e "$Cyan┖─────────────────────────────────────────────────────────────────────────┙$nc\n"
 
 			echo ""
+			
+			xdotool key function+F11
 
 			exit 1
 ƒ
