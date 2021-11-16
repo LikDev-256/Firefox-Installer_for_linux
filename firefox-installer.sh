@@ -141,6 +141,7 @@ verfile=$pwd'logs/firever.txt'
 opt=$(find /opt -path /opt/firefox &> logs/path.log)
 
 link=$(curl -Is "https://download.mozilla.org/?product=firefox-beta-latest-ssl&os=linux64&lang=en-US" | perl -n -e '/^Location: (.*)$/ && print "$1\n"')
+curl -Is "https://download.mozilla.org/?product=firefox-beta-latest-ssl&os=linux64&lang=en-US" | perl -n -e '/^Location: (.*)$/ && print "$1\n"' > $linkfile
 currentfile=$(cat $linkfile)
 banner=$(cat $current'Logos/logoinstall.txt')
 
