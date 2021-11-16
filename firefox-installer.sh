@@ -148,7 +148,6 @@ banner=$(cat $current'Logos/logoinstall.txt')
 # Distros
 basedist=$(cat /etc/*-release | grep "ID_LIKE=" | cut -d "=" -f2 | head -n 1)
 dist=$(cat /etc/*-release | grep "ID=" | cut -d "=" -f2 | head -n 1)
-<<<<<<< HEAD
 #declare -a distros=(debian arch)
 arch=False
 deb=False
@@ -159,13 +158,6 @@ pkgname=firefox
 pkgver=$(cat $linkfile | cut -d "/" -f 7)
 archbuildir=$current"firefox-arch"
 archbuild=/PKGBUILD
-=======
-basedist=$(cat /etc/*-release | grep "ID_LIKE=" | cut -d "=" -f2 | head -n 1)
-ub=Ubuntu
-filename=$(find fire*.tar.bz2)
-opt=$(find /opt -path /opt/firefox &> path.log)
-ubuntu=false
->>>>>>> 2cc52a3ea4db2b87b36653bd798db7c5a43cd806
 
 # /////////////////////////////////////////////////////////////////////////////////////////////
 # Colors diclarations 
@@ -194,25 +186,7 @@ bannershow
 checkdist
 install-requirements
 
-<<<<<<< HEAD
 bannershow
-=======
-if [ "$dist" = "$ub" ]; then
-	echo -e " $red[$green Arch based distro detected !$red]$white You already have the latest versions from your repos$nc"
-	echo ""
-	echo "The current technique does not support your distro but we have a workaround"
-	echo "Press [y] to proceed and [n] to terminate the script"
-
-	read t
-
-	if [ "$t" = "n" ]; then
-
-sleep 1
-clear
-echo "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
-echo "$banner"
-echo "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
->>>>>>> 2cc52a3ea4db2b87b36653bd798db7c5a43cd806
 
 echo -e "$Cyan╔──────────────────────────────────────────────────────────────────────────────────────────────────────────╗$nc"
 echo -e "$Cyan│$nc $red[$green+$red]$green Close any running instance of firefox $red[$green+$red]$Cyan │$nc"
@@ -271,17 +245,7 @@ if [ $deb = True ]; then
 
 		bannershow
 
-<<<<<<< HEAD
 		mkdir $debpkginstall
-=======
-	sudo apt remove firefox-esr -y &>/dev/null
-
-	if [ "basedist" = "arch" ]; then
-		echo "For arch distros the outputs are not hidden for debugging purposes"
-		sudo pacman -Rs --noconfirm firefox
-	fi
-fi
->>>>>>> 2cc52a3ea4db2b87b36653bd798db7c5a43cd806
 
 		echo "$debpkginstall"
 		#sleep 5
@@ -293,7 +257,6 @@ fi
 		mkdir -p "$debpkginstall"/DEBIAN
 		sleep 2
 
-<<<<<<< HEAD
 		echo "Moving stuff in place..."
 		# Install
 		mv firefox "$debpkginstall"/opt/
@@ -357,67 +320,6 @@ fi
 			echo -e "If you Encouter a issue Please Report the issue to,"
 			echo -e "https://github.com/LikDev-256/Firefox-Installer_Firefox-Updater/issues 😬"
 			echo -e "$Cyan┖─────────────────────────────────────────────────────────────────────────┙$nc\n"
-=======
-# if hash firefox 2>/dev/null; then
-# 	echo "" &>/dev/null
-# else
-	if [ ubuntu = false ]; then
-		wget -c "http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox_93.0+build1-0ubuntu0.18.04.1_amd64.deb" -q --show-progress
-		sudo dpkg -i firefox_93.0+build1-0ubuntu0.18.04.1_amd64.deb &>/dev/null
-		sudo apt-get -f install -y &>/dev/null
-	else
-		sudo apt remove firefox -y &>/dev/null
-	fi
-
-# Arch implementation
-
-	if [ "basedist" = "arch" ]; then
-		sudo pacman -Syyu
-		sudo pacman -S fakeroot
-		sudo pacman -S yay
-		sudo yay -Syu
-
-		echo "Press [1] to install the beta and [2] to install the stable version"
-
-		read g
-
-		if [ "$g" = "1" ]; then
-			sudo yay -S --noconfirm firefox-beta
-		else
-			sudo yay -S --noconfirm firefox
-		fi
-		sleep 1
-		clear
-		echo "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
-		echo "$banner"
-		echo "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
-
-		echo -e "$Cyan╔─────────────────────────────────────────────────────────────────────╗$nc"
-		echo -e "$Cyan│$nc $red[$green+$red]$green Installation Successful $red[$green+$red]$Cyan │$nc"
-		echo -e "$Cyan┖─────────────────────────────────────────────────────────────────────┙$nc\n"
-
-		exit 1
-	fi
-
-touch firelink.txt
-echo "$link" > firelink.txt
-
-if [[ "$filename" = *such* ]]; then #Check if the download file exist no
-	wget -c -i firelink.txt -q --show-progress #downloading"
-	if [[ $(bzip2 -tv $filename) = *ok* ]]; then #Check if the file is corrupt
-		tar -xavf $current$downfile &>/dev/null#install
-			if [ "$opt" = "/opt/firefox" ]; then
-                sudo rm -rf /opt/firefox
-	            sudo mv firefox /opt
-			else
-				sudo rm -rf /opt/firefox
-				sudo mv firefox /opt
-			fi
-	else
-		echo "Downloaded File corrupted"
-		echo -e "$Cyan│$nc $red[$blue+$red]$green Please Check your network and press $green[y]$green to Retry $red[n]$red to Terminate the Script $red[$blue+$red]$Cyan │$nc"
-		read x
->>>>>>> 2cc52a3ea4db2b87b36653bd798db7c5a43cd806
 
 			exit 1
 
