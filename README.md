@@ -1,5 +1,5 @@
 # Firefox-Installer && Firefox-Updater
-A Script that Installs and keeps your browser upto-date in Debian & Debian based systems. Which don't have the latest versions in the package manager.
+A Script that Installs and keeps your browser upto-date in Debian & Arch based systems. Which don't have the latest versions in the package manager.
 
 ---
 
