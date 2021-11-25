@@ -3,7 +3,7 @@
 
 pkgname=firefox
 _pkgname=firefox
-pkgver=95.0b6
+pkgver=95.0b11
 _major=${pkgver/rc*}
 _build=${pkgver/*rc}
 pkgrel=1
