@@ -147,7 +147,7 @@ cleanup() {
 	sleep 3
 
 	check() {
-	echo -e "Press [y] to $redClean the build files and [n] to terminate the script"
+	echo -e "Press [y] to $red Clean the build files and [n] to terminate the script$nc"
 	while true; do
 		read -n1 -r
 		[[ $REPLY == 'y' ]] && break
@@ -157,6 +157,7 @@ cleanup() {
 	echo "Continuing ..."
 	}
 	check
+	bannershow
 	#////////////////////////////////////////////
 	#clean build
 		echo -e "Cleaning BUILD environment ..."
@@ -171,7 +172,7 @@ cleanup() {
 
 		cd $archbuildir
 		echo -e "Cleaning arch folder ..."
-		ls -1 | grep -E -v 'firefox.install|firefox.desktop|PKGBUILD|firefox.shƒ' | xargs rm -rf
+		ls -1 | grep -E -v 'firefox.install|firefox.desktop|PKGBUILD|firefox.sh' | xargs rm -rf
 		cd $current
 		sleep 5
 
@@ -184,7 +185,7 @@ cleanup() {
 	sleep 3
 
 	check() {
-	echo -e "Press [y] to $redClean the script and [n] to terminate the script"
+	echo -e "Press [y] to $red Clean the script and [n] to terminate the script$nc"
 	while true; do
 		read -n1 -r
 		[[ $REPLY == 'y' ]] && break
