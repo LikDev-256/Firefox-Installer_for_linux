@@ -4,7 +4,7 @@ A Script that Installs and keeps your browser upto-date in Debian & Debian based
 ---
 
 ## Firefox Installer
-![Firefox installer script](https://github.com/LikDev-256/Firefox-Installer_Firefox-Updater/blob/main/Logos/44.png)
+![Firefox installer script](https://github.com/LikDev-256/Firefox-Installer_Firefox-Updater/blob/main/Logos/firefox-installer.png)
 
 #### ⚠️ This is not an official installer provided by Mozilla 
 
@@ -53,6 +53,6 @@ cd ~/ && git clone https://github.com/LikDev-256/Firefox-Installer_Firefox-Updat
 
 # Firefox Updater
 
-![Firefox updater script](https://github.com/LikDev-256/Firefox-Installer_Firefox-Updater/blob/main/Logos/33.png)
+![Firefox updater script](https://github.com/LikDev-256/Firefox-Installer_Firefox-Updater/blob/main/Logos/firefox-updater.png)
 
 ## This script is still under development
