@@ -7,6 +7,8 @@ rootcheck() {
         echo -e "$yellow[!]$white Needs root permissions to run the script $yellow[!]$nc"
 		echo -e "$red Please provide permissions$nc"
 		[ "$UID" -eq 0 ] || exec sudo "$0" "$@"
+
+	else
 	fi
 }
 
@@ -195,6 +197,7 @@ cleanup() {
 	echo "Continuing ..."
 	}
 	check
+		cd ~/
 		rm -rf $current
 		#echo $current
 		sleep 5
