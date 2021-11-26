@@ -374,15 +374,10 @@ if [ $deb = True ]; then
 
 		cd $debpkgdir
 		DownloadCheckfile
-		#echo "Extracting file This might take a while ..."
-		echo -e "Extracting file This might take a while ..."
-		echo ""
-		echo -e "This might take while ..."
-		echo -e "Good time to get a sip of coffee 😉"
-		sleep 5
-		tar -xavf $debpkgdir$tarname > /dev/null &
-		#echo -e "\\r${CHECK_MARK} thing 1 done"
-		sleep 4
+		# echo "Extracting file This might take a while ..."
+
+		# echo -e "\\r${CHECK_MARK} thing 1 done"
+		# sleep 4
 
 		bannershow
 
@@ -402,7 +397,13 @@ if [ $deb = True ]; then
 		echo "Moving stuff in place..."
 		echo ""
 		# Install
-		mv firefox -t "$debpkginstall"/opt/
+		# mv firefox -t "$debpkginstall"/opt/
+		echo -e "Extracting file ..."
+		echo ""
+		echo -e "This might take while ..."
+		echo -e "Good time to get a sip of coffee 😉"
+		sleep 5
+		tar -xavf $debpkgdir$tarname -C "$debpkginstall"/opt/ > /dev/null &
 		install -m755 firefox.sh "$debpkginstall"/usr/bin/firefox
 		install -m644 *.desktop "$debpkginstall"/usr/share/applications/
 		sleep 3
@@ -416,12 +417,12 @@ if [ $deb = True ]; then
 		done
 		sleep 3
 
-		echo -e "Linking dictionaries ..."
-		echo ""
-		ln -Ts /usr/share/hunspell "$debpkginstall"/opt/firefox/dictionaries
-		ln -Ts /usr/share/hyphen "$debpkginstall"/opt/firefox/hyphenation
+		# echo -e "Linking dictionaries ..."
+		# echo ""
+		# ln -Ts /usr/share/hunspell "$debpkginstall"/opt/firefox/dictionaries
+		# ln -Ts /usr/share/hyphen "$debpkginstall"/opt/firefox/hyphenation
 
-		sleep 3
+		# sleep 3
 
 		# Use system certificates
 		echo -e "Linking certificates ..."
@@ -449,15 +450,18 @@ if [ $deb = True ]; then
 		sleep 4
 		bannershow
 
-		echo -e "Removing the current Firefox"
-		sudo apt remove *firefox* -y
+		echo -e "Removing the current Firefox ..."
+		sudo apt remove firefox firefox-esr -y
 		sleep 3
+		bannershow
+		echo ""
+		echo -e "Installing dependencies for the package ..."
+		sleep 3
+		sudo apt install ffmpeg pulseaudio -y
 		bannershow
 		echo ""
 		echo -e "Installing the previously built package"
 		sleep 3
-		sudo apt install ffmpeg pulseaudio -y
-		bannershow
 		sudo dpkg -i *.deb
 		bannershow
 		sudo apt-get install -f
