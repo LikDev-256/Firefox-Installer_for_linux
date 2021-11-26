@@ -403,7 +403,7 @@ if [ $deb = True ]; then
 		echo -e "This might take while ..."
 		echo -e "Good time to get a sip of coffee 😉"
 		sleep 5
-		tar -xavf $debpkgdir$tarname -C "$debpkginstall"/opt/ > /dev/null &
+		tar -xavf $debpkgdir$tarname -C "$debpkginstall"/opt/ > /dev/null
 		install -m755 firefox.sh "$debpkginstall"/usr/bin/firefox
 		install -m644 *.desktop "$debpkginstall"/usr/share/applications/
 		sleep 3
