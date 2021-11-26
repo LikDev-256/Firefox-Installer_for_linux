@@ -267,6 +267,9 @@ bannershow
 connectivitycheck
 sleep 7
 checkdist
+if [[ $deb = True ]] then
+	rootcheck
+fi
 install-requirements
 rootcheck
 
