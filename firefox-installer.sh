@@ -2,13 +2,16 @@
 
 rootcheck() {
 	#ROOT PRIVILEGIES
-	if [[ $EUID -ne 0 ]]; then
 
+	if [[ $(id -u) -gt 0 ]] && [ $deb = True ]; then
         echo -e "$yellow[!]$white Needs root permissions to run the script $yellow[!]$nc"
 		echo -e "$red Please provide permissions$nc"
 		[ "$UID" -eq 0 ] || exec sudo "$0" "$@"
+	fi
 
-	else
+	if [[ $(id -u) -eq 0 ]] && [ $arch = True ]; then
+		echo -e "$yellow[!]$white Arch based cannot run the script as root $yellow[!]$nc"
+		exit 1
 	fi
 }
 
@@ -73,8 +76,7 @@ DownloadCheckfile() {
 						echo -e "This might take while ..."
 						echo -e "Good time to get a sip of coffee 😉"
 						wget -c -i $linkfile -q --show-progress
-						currentshasum=$(sha256sum $debpkgdir$tarname)
-							if [["$currentshasum" == "$tarshasum"]]; then
+							if [[ "$currentshasum" == "$tarshasum" ]]; then
 								echo ""
 								echo -e "File integrity check successful [✅]"
 								bannershow
@@ -266,7 +268,7 @@ connectivitycheck
 sleep 7
 checkdist
 install-requirements
-
+rootcheck
 
 # Files and paths
 current=$(pwd)/
