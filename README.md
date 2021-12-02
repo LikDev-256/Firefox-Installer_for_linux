@@ -41,7 +41,7 @@ cd ~/ && git clone https://github.com/LikDev-256/Firefox-Installer_Firefox-Updat
 <tr>
 <td>Installation worked!</td>
 <td> ❎ Not Tested (Implemented)</td>
-<td> ❎ Not Tested (Implemented)</td>
+<td> ✔️ Tested Worked </td>
 <td> ✔️ Tested Worked </td>
 </tbody>
 </table>
@@ -56,3 +56,5 @@ cd ~/ && git clone https://github.com/LikDev-256/Firefox-Installer_Firefox-Updat
 ![Firefox updater script](https://github.com/LikDev-256/Firefox-Installer_Firefox-Updater/blob/main/Logos/firefox-updater.png)
 
 ## This script is still under development
+
+The installer can be also used to update when the default update **Help >> About Firefox** doesn't work
