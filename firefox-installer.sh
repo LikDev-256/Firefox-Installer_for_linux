@@ -93,9 +93,10 @@ DownloadCheckfile() {
 
 connectivitycheck() {
 	
-echo -e "GET http://google.com HTTP/1.0\n\n" | nc google.com 80 > /dev/null 2>&1
+# echo -e "GET http://google.com HTTP/1.0\n\n" | nc google.com 80 > /dev/null 2>&1
+connect=$(ping -q -c1 google.com &>/dev/null && echo 1 || echo 0)
 
-if [ $? -eq 0 ]; then
+if [ $connect -eq 1 ]; then
     echo "Network connectivity is up good to go 😃"
 
 else
