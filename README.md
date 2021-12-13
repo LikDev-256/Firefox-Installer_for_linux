@@ -1,4 +1,4 @@
-# Firefox-Installer && Firefox-Updater
+# Firefox-Installer && Updater
 A Script that Installs and keeps your browser upto-date in Debian & Arch based systems. Which don't have the latest versions in the package manager.
 
 ---
@@ -16,13 +16,21 @@ A Script that Installs and keeps your browser upto-date in Debian & Arch based s
 ## Usage
 
 1. Install git, Some distros doesn't require this step,
+
+Debian Based,
 ```
 sudo apt-get update
 sudo apt-get install git
 ```
-2. Running the script for installing,
+Arch Based,
 ```
-cd ~/ && git clone https://github.com/LikDev-256/Firefox-Installer_Firefox-Updater.git && cd ~/Firefox-Installer_Firefox-Updater && chmod +x firefox-installer.sh && ./firefox-installer.sh
+sudo pacman-mirrors --fasttrack && sudo pacman -Syu
+sudo pacman -S git
+```
+
+2. Running the script for installing Firefox,
+```
+cd ~/ && git clone https://github.com/LikDev-256/Firefox-Installer_Updater.git && cd ~/Firefox-Installer_Firefox-Updater && chmod +x firefox-installer.sh && ./firefox-installer.sh
 ```
 ---
 
@@ -47,9 +55,15 @@ cd ~/ && git clone https://github.com/LikDev-256/Firefox-Installer_Firefox-Updat
 </table>
 
 ---
-## Needed help and contribution for testing
+Needed help and contribution for testing
 ## **Please report any issues to the issues in github**
 ---------------------------------------------------------
+
+Features to implement,
+- [ ] Add options to the script
+- [ ] Add a resume feature
+- [ ] Make it fail proof
+- [ ] Optimizations
 
 # Firefox Updater
 
