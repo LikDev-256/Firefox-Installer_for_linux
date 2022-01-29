@@ -318,7 +318,7 @@ nc="\e[0m"
 # tarname
 tarname=$pkgname"-"$pkgver".tar.bz2"
 
-xdotool key function+F11
+#xdotool key function+F11
 
 #bannershow
 #xdotool key function+F11
@@ -474,6 +474,7 @@ if [ $deb = True ]; then
 		sudo dpkg -i *.deb
 		bannershow
 		sudo apt-get install -f
+		sudo chown -R :$USER /opt/firefox
 
 			bannershow
 
@@ -490,7 +491,7 @@ if [ $deb = True ]; then
 			sleep 10
 
 			cleanup
-			xdotool key function+F11
+			#xdotool key function+F11
 
 			exit 1
 
@@ -509,6 +510,7 @@ elif [ $arch = True ]; then
         sed -i "s/pkgver=.*/pkgver=$pkgver/" $archbuildir$archbuild
 		bannershow
 		makepkg -Acis
+		sudo chown -R :$USER /opt/firefox
 		sleep 2
 
 			bannershow
@@ -527,7 +529,7 @@ elif [ $arch = True ]; then
 
 			cleanup
 			
-			xdotool key function+F11
+			#xdotool key function+F11
 
 			exit 1
 fi
