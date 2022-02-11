@@ -274,6 +274,8 @@ fi
 install-requirements
 rootcheck
 
+usr=$USER
+
 # Files and paths
 current=$(pwd)/
 linkfile="$current"logs/firelink.txt
@@ -474,7 +476,7 @@ if [ $deb = True ]; then
 		sudo dpkg -i *.deb
 		bannershow
 		sudo apt-get install -f
-		sudo chown -R :$USER /opt/firefox
+		sudo chown -R $usr:$usr /opt/firefox
 
 			bannershow
 
@@ -510,7 +512,7 @@ elif [ $arch = True ]; then
         sed -i "s/pkgver=.*/pkgver=$pkgver/" $archbuildir$archbuild
 		bannershow
 		makepkg -Acis
-		sudo chown -R :$USER /opt/firefox
+		sudo chown -R $usr:$usr /opt/firefox
 		sleep 2
 
 			bannershow
