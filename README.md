@@ -30,7 +30,7 @@ sudo pacman -S git
 
 2. Running the script for installing Firefox,
 ```
-cd ~/ && git clone https://github.com/LikDev-256/Firefox-Installer_Updater.git && cd ~/Firefox-Installer_Updater && chmod +x firefox-installer.sh && ./firefox-installer.sh
+cd ~/ && git clone https://github.com/LikDev-256/Firefox-Installer_for_linux.git && cd ~/Firefox-Installer_for_linux && chmod +x firefox-installer.sh && ./firefox-installer.sh
 ```
 ---
 
